@@ -52,10 +52,10 @@ A high-performance C++ Rubik's Cube solver implementing Korf's IDA* algorithm, b
                          │ GenericRubiksCube& (polymorphic)
           ┌──────────────▼──────────────┐
           │      GenericRubiksCube      │  ← abstract interface
-          │       (pure virtual)        │
-          └──────┬──────────────┬───────┘
-                 │ implements   │ implements
-    ┌────────────▼───┐   ┌──────▼──────────────┐   ┌───────────────────┐
+          │       (pure virtual)        │─────────────┬
+          └──────┬──────────────┬───────┘             |
+                 │ implements   │ implements          |
+    ┌────────────▼───┐   ┌──────▼──────────────┐   ┌──▼────────────────┐
     │ RubiksCube3d   │   │ RubiksCube1dArray   │   │ RubiksCubeBitboard│
     │ Array          │   │ (cache-friendly)    │   │ (3 × uint64_t)    │
     │ (debug-friendly│   └─────────────────────┘   └───────────────────┘
