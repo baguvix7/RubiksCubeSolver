@@ -285,6 +285,10 @@ IDA* solve time varies significantly by scramble — some positions have very ef
 
 ---
 
+Terminal Output of a Solve:
+<img width="497" height="418" alt="Screenshot 2026-06-27 at 10 44 01 PM" src="https://github.com/user-attachments/assets/e23de592-6135-4f5d-bbe0-6553f6ba1c0f" />
+
+
 ## Design Decisions & Audit Notes
 
 **Centralised constants (`SolverConfig.h`)** — The original code had the heuristic fallback hard-coded as `7` in `IDAStarSolver.cpp`, silently coupled to `MAX_DEPTH = 6` in `CornerDBGenerator.cpp`. If the database was regenerated at a different depth without updating the fallback, IDA* would produce sub-optimal solutions without any error or warning. The `SolverConfig.h` approach makes this coupling explicit and compile-time-safe.
